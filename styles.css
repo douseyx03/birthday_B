@@ -1,0 +1,167 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pacifico', cursive;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #f6d365);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.balloons {
+    position: absolute;
+    top: -100px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    background: #ff6f61;
+    border-radius: 50%;
+    animation: floatBalloon 6s ease-in-out infinite;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 60px;
+    height: 80px;
+    background: #ff6f61;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 2px;
+    height: 80px;
+    background: #000;
+    transform: translateX(-50%);
+}
+
+@keyframes floatBalloon {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-100px) rotate(5deg); }
+}
+
+.balloon:nth-child(2) {
+    left: 20%;
+    background: #ffcc5c;
+    animation-delay: 1s;
+}
+
+.balloon:nth-child(3) {
+    left: 40%;
+    background: #88d8b0;
+    animation-delay: 2s;
+}
+
+.balloon:nth-child(4) {
+    left: 60%;
+    background: #96ceb4;
+    animation-delay: 3s;
+}
+
+.balloon:nth-child(5) {
+    left: 80%;
+    background: #ff6f61;
+    animation-delay: 4s;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffcc5c;
+    border-radius: 50%;
+    animation: confetti 5s linear infinite;
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.confetti:nth-child(6) {
+    left: 10%;
+    animation-delay: 0.5s;
+}
+
+.confetti:nth-child(7) {
+    left: 30%;
+    animation-delay: 1s;
+}
+
+.confetti:nth-child(8) {
+    left: 50%;
+    animation-delay: 1.5s;
+}
+
+.confetti:nth-child(9) {
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.confetti:nth-child(10) {
+    left: 90%;
+    animation-delay: 2.5s;
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #ff6f61;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
